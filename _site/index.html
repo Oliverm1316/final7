@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="CLIENTE" />
+
+
+<title>NOMBRE GRUPO</title>
+
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="site_libs/vis-4.16.1/vis.min.css" rel="stylesheet" />
+<script src="site_libs/vis-4.16.1/vis.min.js"></script>
+<link href="site_libs/timeline-0.4/timevis.css" rel="stylesheet" />
+<script src="site_libs/timevis-binding-0.4/timevis.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-binding-2.0.2/leaflet.js"></script>
+<script src="site_libs/leaflet-providers-1.1.17/leaflet-providers.js"></script>
+<script src="site_libs/leaflet-providers-plugin-2.0.2/leaflet-providers-plugin.js"></script>
+<link href="site_libs/leaflet-easybutton-1.3.1/easy-button.css" rel="stylesheet" />
+<script src="site_libs/leaflet-easybutton-1.3.1/easy-button.js"></script>
+<script src="site_libs/leaflet-easybutton-1.3.1/EasyButton-binding.js"></script>
+<link href="site_libs/ionicons-2.0.1/ionicons.min.css" rel="stylesheet" />
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.5/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/dt-ext-buttons-1.10.16/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="site_libs/dt-ext-buttons-1.10.16/js/dataTables.buttons.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.flash.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.html5.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.colVis.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.print.min.js"></script>
+<link href="site_libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="FORMATO.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">CE Events</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Quotation</a>
+</li>
+<li>
+  <a href="about.html">Credentials</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">NOMBRE GRUPO</h1>
+<h4 class="author"><em>CLIENTE</em></h4>
+<h4 class="date"><em>FECHA DEL GRUPO</em></h4>
+
+</div>
+
+
+<script> 
+    $(document).ready(function() { 
+    $head = $('#header'); 
+    $head.prepend('<A href = https://www.cuttingedge-events.com><img src ="LOGO.png" width="150" align="right"></A>') 
+    }); 
+</script>
+<div id="accommodation" class="section level2">
+<h2>Accommodation</h2>
+<div id="main-hotel-ksjdgnsjf" class="section level3">
+<h3><strong>Main Hotel: KSJDGÑSJF</strong></h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p><img src = "https://r-fa.bstatic.com/images/hotel/max1024x768/148/148979532.jpg" width="360"> <img src = "https://q-fa.bstatic.com/images/hotel/max1024x768/140/14017089.jpg" width="360" align="right"></p>
+<p><img src = "https://q-fa.bstatic.com/images/hotel/max1024x768/141/14191840.jpg"></p>
+</div>
+<div id="alternative-hotels" class="section level3 tabset tabset-fade tabset-pills">
+<h3><strong>Alternative Hotels</strong></h3>
+<div id="hotel-2" class="section level4">
+<h4>HOTEL 2</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p><img src = "https://r-fa.bstatic.com/images/hotel/max1024x768/112/112393493.jpg" width="360"> <img src = "https://q-fa.bstatic.com/images/hotel/max1024x768/112/112393525.jpg" width="360" align="right"></p>
+<p><img src = "https://r-fa.bstatic.com/images/hotel/max1024x768/112/112375607.jpg"></p>
+</div>
+<div id="hotel-3" class="section level4">
+<h4>HOTEL 3</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p><img src = "https://r-fa.bstatic.com/images/hotel/max1024x768/112/112393493.jpg" width="360"> <img src = "https://q-fa.bstatic.com/images/hotel/max1024x768/112/112393525.jpg" width="360" align="right"></p>
+<p><img src = "https://r-fa.bstatic.com/images/hotel/max1024x768/112/112375607.jpg"></p>
+</div>
+</div>
+</div>
+<div id="programme" class="section level2">
+<h2>Programme</h2>
+<div id="programme-overview-and-timeline" class="section level3">
+<h3><strong>Programme Overview and timeline</strong></h3>
+<div id="htmlwidget-90e7b212b725034b05ce" class="timevis html-widget" style="width:100%;height:300px;">
+<div class="btn-group zoom-menu">
+<button type="button" class="btn btn-default btn-lg zoom-in" title="Zoom in">+</button>
+<button type="button" class="btn btn-default btn-lg zoom-out" title="Zoom out">-</button>
+</div>
+</div>
+<script type="application/json" data-for="htmlwidget-90e7b212b725034b05ce">{"x":{"items":[{"id":" 1","start":"2019-05-10 17:00:00","content":"Transfer in","group":"3","type":"box","style":"background-color:#FF9933;"},{"id":" 2","start":"2019-05-10 20:00:00","content":"Dinner Restaurant L’Olivé","group":"4","type":"box","style":"background-color:#FF9933;"},{"id":" 3","start":"2019-05-10 20:00:00","content":"Alternative: Windsor","group":"4","type":"box","style":"background-color:#FF9933;"},{"id":" 4","start":"2019-05-11 09:00:00","content":"F1 qualification","group":"1","type":"box","style":"background-color:#FF9933;"},{"id":" 5","start":"2019-05-11 20:30:00","content":"Dinner at Boca Grande","group":"4","type":"box","style":"background-color:#FF9933;"},{"id":" 6","start":"2019-05-11 20:30:00","content":"Alternative: MonVinic","group":"4","type":"box","style":"background-color:#FF9933;"},{"id":" 7","start":"2019-05-12 09:00:00","content":"F1 race","group":"1","type":"box","style":"background-color:#FF9933;"},{"id":" 8","start":"2019-05-12 20:00:00","content":"Dinner at Torre d’Alta Mar","group":"4","type":"box","style":"background-color:#FF9933;"},{"id":" 9","start":"2019-05-12 20:00:00","content":"Alternative: Pez Vela","group":"4","type":"box","style":"background-color:#FF9933;"},{"id":"10","start":"2019-05-13 12:00:00","content":"Tapas lunch El Nacional","group":"1","type":"box","style":"background-color:#FF9933;"},{"id":"11","start":"2019-05-13 14:00:00","content":"Transfer Out","group":"2","type":"box","style":"background-color:#FF9933;"}],"groups":[{"id":"1","content":"Morning"},{"id":"2","content":"Lunch"},{"id":"3","content":"Afternoon"},{"id":"4","content":"Diner"}],"showZoom":true,"zoomFactor":0.2,"fit":true,"options":[],"height":300,"api":[{"method":"setOptions","options":{"orientation":"top","align":"left"}}]},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level3">
+<h3><strong>Map</strong></h3>
+<div id="htmlwidget-d6d2931673dedc717da9" style="width:768px;height:768px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d6d2931673dedc717da9">{"x":{"options":{"minZoom":14,"maxZoom":18,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"dragging":true},"calls":[{"method":"addProviderTiles","args":["Esri",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addCircleMarkers","args":[[41.386967,41.387772,41.383467,41.393802,41.383605,41.389096,41.394685,41.394514,41.388973,41.369104,41.372663,41.39317],[2.174348,2.167697,2.171104,2.167628,2.17047,2.162683,2.157087,2.159855,2.164991,2.190044,2.18774,2.16396],5,null,null,{"interactive":true,"className":"","stroke":true,"color":["#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#0000FF","#0000FF","#0000FF","#0000FF","#0000FF","#0000FF","#0000FF"],"weight":5,"opacity":0.5,"fill":true,"fillColor":["#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#0000FF","#0000FF","#0000FF","#0000FF","#0000FF","#0000FF","#0000FF"],"fillOpacity":0.2},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addPopups","args":[[41.386967,41.387772,41.383467,41.393802,41.383605,41.389096,41.394685,41.394514,41.388973,41.369104,41.372663,41.39317],[2.174348,2.167697,2.171104,2.167628,2.17047,2.162683,2.157087,2.159855,2.164991,2.190044,2.18774,2.16396],["<b>Ohla Barcelona<\/b>","<b>H10 Metropolitan<\/b>","<b>1898 Hotel<\/b>","<b>OD Barcelona<\/b>","<b>Le Meridien<\/b>","<b>L’olivé<\/b>","<b>Windsor<\/b>","<b>Boca Grande<\/b>","<b>Monvinic<\/b>","<b>Pez Vela<\/b>","<b>Torre d’Alta Mar<\/b>","<b>El Nacional<\/b>"],null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]},{"method":"addLegend","args":[{"colors":["#FF0000","#0000FF"],"labels":["Accom","Rest"],"na_color":null,"na_label":"NA","opacity":0.5,"position":"bottomright","type":"factor","title":null,"extra":null,"layerId":null,"className":"info legend","group":null}]},{"method":"addEasyButton","args":[{"icon":"ion-arrow-shrink","title":"Reset View","onClick":"function(btn, map){ map.setView(map._initialCenter, map._initialZoom); }","position":"topleft"}]}],"limits":{"lat":[41.369104,41.394685],"lng":[2.157087,2.190044]}},"evals":["calls.4.args.0.onClick"],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (function(el, x){ var map = this; map._initialCenter = map.getCenter(); map._initialZoom = map.getZoom();}).call(this.getMap(), el, x, data);\n}","data":null}]}}</script>
+</div>
+<div id="day-1" class="section level3">
+<h3><strong>DAY 1</strong></h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
+<div id="restaurant-options" class="section level4 tabset tabset-fade tabset-pills">
+<h4>RESTAURANT OPTIONS</h4>
+<div id="bouquet-alella" class="section level5 tabset">
+<h5>BOUQUET ALELLA</h5>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<iframe src="https://www.google.com/maps/embed?pb=!4v1549897881307!6m8!1m7!1sCAoSLEFGMVFpcFAwYXNxWFRvdGxUZzRqQkVxaFFsN2FjczFwMFBST3lja2VnYmUx!2m2!1d41.4975900053068!2d2.297463777420944!3f254.6623480267864!4f0!5f0.7820865974627469" width="600" height="450" frameborder="0" style="border:0" allowfullscreen>
+</iframe>
+</div>
+<div id="restaurant-2" class="section level5">
+<h5>Restaurant 2</h5>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p><img src = "http://www.bcncatfilmcommission.com/sites/default/files/styles/fancybox/public/locations/SALA%20PRINCIPAL%20%2B%20LATERAL.jpg?itok=A0l8rqkZ" width="800" ></p>
+</div>
+</div>
+</div>
+<div id="day-2" class="section level3">
+<h3><strong>DAY 2 </strong></h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<div id="moring-activity-opt." class="section level4 tabset tabset-fade tabset-pills">
+<h4>MORING ACTIVITY OPT.</h4>
+<div id="activity-1" class="section level5">
+<h5>Activity 1</h5>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p><img src = "http://www.bcncatfilmcommission.com/sites/default/files/styles/fancybox/public/locations/SALA%20PRINCIPAL%20%2B%20LATERAL.jpg?itok=A0l8rqkZ" width="800" ></p>
+</div>
+<div id="activity-2" class="section level5 tabset tabset-fade">
+<h5>Activity 2</h5>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<div id="activity-2-a" class="section level6">
+<h6>Activity 2 A</h6>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p><img src = "http://www.bcncatfilmcommission.com/sites/default/files/styles/fancybox/public/locations/SALA%20PRINCIPAL%20%2B%20LATERAL.jpg?itok=A0l8rqkZ" width="800" ></p>
+</div>
+<div id="activity-2-b" class="section level6">
+<h6>Activity 2 B</h6>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p><img src = "http://www.bcncatfilmcommission.com/sites/default/files/styles/fancybox/public/locations/SALA%20PRINCIPAL%20%2B%20LATERAL.jpg?itok=A0l8rqkZ" width="800" ></p>
+</div>
+</div>
+</div>
+<div id="lunch-restaurant-opt." class="section level4 tabset tabset-fade tabset-pills">
+<h4>LUNCH RESTAURANT OPT.</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<div id="restaurant-1" class="section level5">
+<h5>Restaurant 1</h5>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p><img src = "https://www.diariodeungloton.com/wp-content/uploads/2018/01/LOlive-DEST-Diario-de-un-Gloton.jpg"  width="800"></p>
+</div>
+<div id="restaurant-2-1" class="section level5">
+<h5>Restaurant 2</h5>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p><img src = "http://www.bcncatfilmcommission.com/sites/default/files/styles/fancybox/public/locations/SALA%20PRINCIPAL%20%2B%20LATERAL.jpg?itok=A0l8rqkZ" width="800" ></p>
+</div>
+</div>
+<div id="afternoon-activity-opt." class="section level4 tabset tabset-fade tabset-pills">
+<h4>AFTERNOON ACTIVITY OPT.</h4>
+<div id="activity-1-1" class="section level5">
+<h5>Activity 1</h5>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p><img src = "http://www.bcncatfilmcommission.com/sites/default/files/styles/fancybox/public/locations/SALA%20PRINCIPAL%20%2B%20LATERAL.jpg?itok=A0l8rqkZ" width="800" ></p>
+</div>
+<div id="activity-2-1" class="section level5">
+<h5>Activity 2</h5>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p><img src = "http://www.bcncatfilmcommission.com/sites/default/files/styles/fancybox/public/locations/SALA%20PRINCIPAL%20%2B%20LATERAL.jpg?itok=A0l8rqkZ" width="800" ></p>
+</div>
+</div>
+<div id="dinner-restaurant-opt." class="section level4 tabset tabset-fade tabset-pills">
+<h4>DINNER RESTAURANT OPT.</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<div id="restaurant-1-1" class="section level5">
+<h5>Restaurant 1</h5>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p><img src = "https://www.diariodeungloton.com/wp-content/uploads/2018/01/LOlive-DEST-Diario-de-un-Gloton.jpg" width="800"></p>
+</div>
+<div id="restaurant-2-2" class="section level5">
+<h5>Restaurant 2</h5>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p><img src = "http://www.bcncatfilmcommission.com/sites/default/files/styles/fancybox/public/locations/SALA%20PRINCIPAL%20%2B%20LATERAL.jpg?itok=A0l8rqkZ" width="800" ></p>
+</div>
+</div>
+</div>
+<div id="day-3" class="section level3">
+<h3><strong>DAY 3</strong></h3>
+<p>END OF THE PROGRAMME</p>
+<hr />
+</div>
+</div>
+<div id="budget" class="section level2">
+<h2>Budget</h2>
+<div id="htmlwidget-3785b36840fb8208b0f4" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3785b36840fb8208b0f4">{"x":{"filter":"none","extensions":["Buttons"],"data":[["2019-05-10","2019-05-10","2019-05-11","2019-05-11","2019-05-12","2019-05-12","2019-05-10","2019-05-10","2019-05-10","2019-05-10","2019-05-11","2019-05-11","2019-05-11",null,null,null,null,"2019-05-11","2019-05-11","2019-05-11","2019-05-12","2019-05-12","2019-05-12","2019-05-12","2019-05-12","2019-05-12","2019-05-13","2019-05-13",null,null,null,null,null,null,null],["Accom","Accom","Accom","Accom","Accom","Accom","Trnsf","Trnsf","Rest","Rest","Trnsf",null,"Act",null,null,null,null,"Trnsf","Rest","Rest","Trnsf",null,"Act","Trnsf","Rest","Rest","Trnsf","Rest","Accom","Accom","Accom","Accom","Accom","Accom","TOTAL"],["Ohla Barcelona 5*",null,"Ohla Barcelona 5*",null,"Ohla Barcelona 5*",null,null,null,"Restaurant L’Olivé","Alternative: Restaurant Windsor",null,null,"Circuit de Catalunya","Circuit de Catalunya","Circuit de Catalunya","Circuit de Catalunya","Circuit de Catalunya",null,"Restaurant Boca Grande","Alternative: Restaurant Monvinic",null,null,"Circuit de Catalunya",null,"Restaurant Torre d’Alta Mar","Alternative: Restaurant  Pez Vela",null,"El Nacional (Tapería)","Alternative: H10 Metropolitan 4*","Alternative: 1898 Hotel 4* SUP","Alternative: OD Barcelona 5*","Alternative: Le Meridien 5*",null,null,null],[15,15,15,15,15,15,1,1,15,null,1,1,15,null,null,null,null,1,15,null,1,1,null,1,15,null,1,15,null,null,null,null,null,null,null],["DUIs, b.breakfast included","5* hotel tax","DUIs, b.breakfast included","5* hotel tax","DUIs, b.breakfast included","5* hotel tax","30 seaters bus transfer from Airport to Hotel","30 seaters bus at disposal for dinner (4h)","starters to share, main course, dessert, red and white wine, water and coffees, from","starters to share, main course, dessert, red and white wine, water and coffees, from","30 seaters bus at disposal for the F1 (8h)","Bus parking","Super Fan -tribunes A, L B, E (Valid for 3 days) rates per person","Excellence -tribunes I, H, G F(Valid for 3 days) rates per person","Suite Platinum: Box in exclusive, up to 25 pax, seats in the Main Tribune, 2 passes for staff, Pit Lane Tour, TV screens, Catering, customized badges- rates for the whole group -","Pedralbes Club: Shared space located in the first floor of the Main Tribune, including Pit Lane Tour, catering and customized badges. - rates per pax -","Village GP: Shared space located at Tribune 1 (covered), service of catering included and customized badges - rates per pax -","30 seaters bus at disposal for dinner (4h)","tasting menu (all to share), including red and white wine, cava,  water and coffees, from","3 courses menu, red and white wine, water and coffees, from","30 seaters bus at disposal for the F1 (8h)","Bus parking","F1","30 seaters bus at disposal for dinner (4h)","starters to share, main course, dessert, red and white wine, cava, water and coffees, from","starters to share, main course , dessert, red and white wine, water and coffees, from","30 seater bus at disposal for lunch and go to Airport.","tapas menu, drinks and coffee inc.","DUIs, b.breakfast included (rates per room and night)","DUIs, b.breakfast included (rates per room and night)","DUIs, b.breakfast included (rates per room and night)","DUIs, b.breakfast included (rates per room and night)","5* hotel tax","4* hotel tax",null],[385,2.48,385,2.48,385,2.48,190,385,75,74,630,80,380,490,37000,1700,950,290,133.5,76.5,630,80,null,290,145,70,190,74,272,453,225,382,2.48,1.21,null],[5775,37.2,5775,37.2,5775,37.2,190,385,1125,0,630,80,5700,0,0,0,0,290,2002.5,0,630,80,null,290,2175,0,190,1110,0,0,0,0,0,0,32314.1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>DATE<\/th>\n      <th>CAT<\/th>\n      <th>Owner<\/th>\n      <th>Quantity<\/th>\n      <th>Concept<\/th>\n      <th>withVAT<\/th>\n      <th>Total<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"initComplete":"\n    function(settings, json) {\n      $(this.api().table().header()).css({\n        'background-color': '#ee7600 ',\n        'color': '#fff'\n      });\n    }","dom":"Bfrtip","buttons":["copy","print"],"pageLength":35,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[3,5,6]}],"order":[],"orderClasses":false,"lengthMenu":[10,25,35,50,100],"rowCallback":"function(row, data) {\nDTWidget.formatDate(this, row, data, 0, 'toDateString');\nDTWidget.formatCurrency(this, row, data, 5, '€', 2, 3, ',', '.', true);\nDTWidget.formatCurrency(this, row, data, 6, '€', 2, 3, ',', '.', true);\n}"}},"evals":["options.initComplete","options.rowCallback"],"jsHooks":[]}</script>
+<div id="terms-conditions" class="section level3">
+<h3>Terms &amp; Conditions</h3>
+<p>*Rates valid for 2019.</p>
+<p>*Net rates for Planet Escape</p>
+<p>*For a group of minimum 15 pax and 15 rooms, It is including Free accommodation, transfers and meals for 1 tourleader (not the F1 entrance tickets or any other activity)</p>
+<p>*Cutting Edge Events management fee including in the detailed rates</p>
+<p>*VAT included.</p>
+<p>*No reservation has been done. Availability upon request.</p>
+<hr />
+</div>
+</div>
+<div id="company-profile" class="section level2">
+<h2>Company Profile</h2>
+<p><img src = "CURRICULUM%20GRAFICO.001.jpeg" width="800"></p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

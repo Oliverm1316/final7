@@ -1,0 +1,281 @@
+---
+title: "NOMBRE GRUPO"
+author: "CLIENTE"
+date: 'FECHA DEL GRUPO'
+output:
+ 
+  html_document:
+    css: FORMATO.css
+    fig_width: 8
+    fig_height: 8
+    highlight: textmate
+    theme: cosmo
+    toc: yes
+    toc_float: yes
+---
+
+<script> 
+    $(document).ready(function() { 
+    $head = $('#header'); 
+    $head.prepend('<A href = https://www.cuttingedge-events.com><img src ="LOGO.png" width="150" align="right"></A>') 
+    }); 
+</script> 
+
+
+```{r echo=FALSE, message=FALSE,warning=FALSE}
+library(readxl)
+library(shiny)
+library(dplyr)
+library(knitr)
+```
+
+
+## Accommodation
+
+### **Main Hotel: KSJDGÑSJF**
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+
+<img src = "https://r-fa.bstatic.com/images/hotel/max1024x768/148/148979532.jpg" width="360"> <img src = "https://q-fa.bstatic.com/images/hotel/max1024x768/140/14017089.jpg" width="360" align="right"> 
+
+
+<img src = "https://q-fa.bstatic.com/images/hotel/max1024x768/141/14191840.jpg">
+
+
+### **Alternative Hotels** {.tabset .tabset-fade .tabset-pills}
+
+#### HOTEL 2
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+<img src = "https://r-fa.bstatic.com/images/hotel/max1024x768/112/112393493.jpg" width="360"> <img src = "https://q-fa.bstatic.com/images/hotel/max1024x768/112/112393525.jpg" width="360" align="right">
+
+<img src = "https://r-fa.bstatic.com/images/hotel/max1024x768/112/112375607.jpg"> 
+
+#### HOTEL 3
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+<img src = "https://r-fa.bstatic.com/images/hotel/max1024x768/112/112393493.jpg" width="360"> <img src = "https://q-fa.bstatic.com/images/hotel/max1024x768/112/112393525.jpg" width="360" align="right">
+
+<img src = "https://r-fa.bstatic.com/images/hotel/max1024x768/112/112375607.jpg">
+
+
+## Programme
+
+### **Programme Overview and timeline**
+
+```{r echo=FALSE, message=FALSE,warning=FALSE}
+library(timevis)
+library(dplyr)
+library(readxl)
+
+timeline <- read_excel("timeline.xlsx", sheet = "Sheet1", 
+    col_types = c("date", 
+        "text", "text", "numeric", "text", 
+        "text"))
+
+data <- data.frame( id = 1:length(timeline$start),
+                    start = as.POSIXlt(timeline$start),
+                    content = timeline$content,
+                    group = timeline$group,
+                    type = "box",
+                    style = "background-color:#FF9933;")
+
+groups = data.frame(id = 1:4, content = c("Morning", "Lunch", "Afternoon", "Diner"))
+
+tl <- timevis(data, groups, showZoom = TRUE, zoomFactor = 0.2, fit = TRUE, width = '100%', height = 300)
+
+tl %>% setOptions(list(orientation = "top", align = "left"))
+
+```
+
+### **Map**
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+library(leaflet)
+library(stringr)
+library(ggmap)
+library(readxl)
+library(dplyr)
+library(leaflet.extras)
+library(shiny)
+
+coordinates <- read_excel("timeline.xlsx", 
+    sheet = "Sheet3", col_types = c("text", 
+        "text", "numeric", "numeric", "text", 
+        "text"))
+
+coordinates$Category <- factor(coordinates$Category)
+
+m <- coordinates %>% 
+  leaflet(options = leafletOptions(dragging = TRUE,
+  minZoom = 14, maxZoom = 18)) %>% 
+  addProviderTiles("Esri") %>% 
+  setView(lng = 2.1687300, lat = 41.3863900, zoom = 14) 
+
+pal <- colorFactor(palette = c("red","blue"),
+      levels = coordinates$Category)
+
+m %>% clearBounds() %>% 
+  addCircleMarkers(radius = 5, color = ~pal(Category)) %>% 
+  addPopups(popup = paste0("<b>",coordinates$Location,"</b>")) %>% 
+  addLegend(position = "bottomright", pal = pal, 
+  values = coordinates$Category) %>% addResetMapButton()
+
+```
+
+### **DAY 1** 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+
+#### RESTAURANT OPTIONS {.tabset .tabset-fade .tabset-pills}
+
+##### BOUQUET ALELLA {.tabset}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+
+<iframe src="https://www.google.com/maps/embed?pb=!4v1549897881307!6m8!1m7!1sCAoSLEFGMVFpcFAwYXNxWFRvdGxUZzRqQkVxaFFsN2FjczFwMFBST3lja2VnYmUx!2m2!1d41.4975900053068!2d2.297463777420944!3f254.6623480267864!4f0!5f0.7820865974627469" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+
+##### Restaurant 2
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+
+<img src = "http://www.bcncatfilmcommission.com/sites/default/files/styles/fancybox/public/locations/SALA%20PRINCIPAL%20%2B%20LATERAL.jpg?itok=A0l8rqkZ" width="800" > 
+
+
+
+### **DAY 2 ** 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+#### MORING ACTIVITY OPT. {.tabset .tabset-fade .tabset-pills}
+
+##### Activity 1
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+<img src = "http://www.bcncatfilmcommission.com/sites/default/files/styles/fancybox/public/locations/SALA%20PRINCIPAL%20%2B%20LATERAL.jpg?itok=A0l8rqkZ" width="800" > 
+
+##### Activity 2 {.tabset .tabset-fade}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+###### Activity 2 A
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+<img src = "http://www.bcncatfilmcommission.com/sites/default/files/styles/fancybox/public/locations/SALA%20PRINCIPAL%20%2B%20LATERAL.jpg?itok=A0l8rqkZ" width="800" > 
+
+
+######Activity 2 B
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+<img src = "http://www.bcncatfilmcommission.com/sites/default/files/styles/fancybox/public/locations/SALA%20PRINCIPAL%20%2B%20LATERAL.jpg?itok=A0l8rqkZ" width="800" > 
+
+#### LUNCH RESTAURANT OPT. {.tabset .tabset-fade .tabset-pills}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+##### Restaurant 1 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+
+<img src = "https://www.diariodeungloton.com/wp-content/uploads/2018/01/LOlive-DEST-Diario-de-un-Gloton.jpg"  width="800"> 
+
+##### Restaurant 2
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+
+<img src = "http://www.bcncatfilmcommission.com/sites/default/files/styles/fancybox/public/locations/SALA%20PRINCIPAL%20%2B%20LATERAL.jpg?itok=A0l8rqkZ" width="800" > 
+
+#### AFTERNOON ACTIVITY OPT. {.tabset .tabset-fade .tabset-pills}
+
+##### Activity 1
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+<img src = "http://www.bcncatfilmcommission.com/sites/default/files/styles/fancybox/public/locations/SALA%20PRINCIPAL%20%2B%20LATERAL.jpg?itok=A0l8rqkZ" width="800" > 
+
+##### Activity 2 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+<img src = "http://www.bcncatfilmcommission.com/sites/default/files/styles/fancybox/public/locations/SALA%20PRINCIPAL%20%2B%20LATERAL.jpg?itok=A0l8rqkZ" width="800" > 
+
+#### DINNER RESTAURANT OPT. {.tabset .tabset-fade .tabset-pills}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+
+##### Restaurant 1 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+
+<img src = "https://www.diariodeungloton.com/wp-content/uploads/2018/01/LOlive-DEST-Diario-de-un-Gloton.jpg" width="800"> 
+
+##### Restaurant 2
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+
+<img src = "http://www.bcncatfilmcommission.com/sites/default/files/styles/fancybox/public/locations/SALA%20PRINCIPAL%20%2B%20LATERAL.jpg?itok=A0l8rqkZ" width="800" > 
+
+
+### **DAY 3** 
+
+
+
+END OF THE PROGRAMME
+
+*****
+## Budget
+
+```{r echo=FALSE, message=FALSE,warning=FALSE}
+
+library(readxl)
+library(dplyr)
+library(knitr)
+library(kableExtra)
+library(DT)
+
+budget <- read_excel("timeline.xlsx", sheet = "Sheet2", 
+    col_types = c("date", "text", "text", 
+        "numeric", "text", "numeric", "numeric"))
+budget$DATE <- as.Date(budget$DATE)
+
+DT::datatable(budget, extensions = "Buttons",rownames = FALSE, options = list(paging= FALSE,
+initComplete = JS("
+    function(settings, json) {
+      $(this.api().table().header()).css({
+        'background-color': '#ee7600 ',
+        'color': '#fff'
+      });
+    }"),
+dom ='Bfrtip', buttons = c('copy','print'),                           pageLength = nrow(budget),autoWidth = TRUE)) %>% 
+   formatDate('DATE') %>% 
+  formatCurrency(6:7,'\U20AC')
+
+
+```
+
+### Terms & Conditions
+
+  *Rates valid for 2019.
+  
+  *Net rates for Planet Escape
+  
+  *For a group of minimum 15 pax and 15 rooms, It is including Free accommodation, transfers and meals for 1 tourleader (not the F1 entrance tickets or any other activity)
+  
+  *Cutting Edge Events management fee including in the detailed rates
+  
+  *VAT included. 
+  
+  *No reservation has been done. Availability upon request.
+  
+*****
+
+## Company Profile
+
+<img src = "CURRICULUM GRAFICO.001.jpeg" width="800">
